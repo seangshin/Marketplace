@@ -1,10 +1,9 @@
 const sequelize = require('../config/connection');
-const { User, Post, Comment } = require('../models');
+const { User, Bid } = require('../models');
 
 //TO DO...rename to match application, review random generation functions
 const userData = require('./userData.json');
-const postData = require('./postData.json');
-const commentData = require('./commentData.json');
+const bidData = require('./bidData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -14,18 +13,10 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const post of postData) {
-    await Post.create({
-      ...post,
+  for (const bid of bidData) {
+    await Bid.create({
+      ...bid,
       user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
-
-  for (const comment of commentData) {
-    await Comment.create({
-      ...comment,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-      post_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 
