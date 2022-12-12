@@ -1,0 +1,17 @@
+[
+    {
+      "name": "HP Pavilion Gaming PC,",
+      "description": "AMD Radeon RX 6600XT, AMD Ryzen 7 5700G Processor, 16 GB RAM, 512 GB SSD, Windows 11 Home, Wi-Fi 5 & Bluetooth 4.2, 9 USB Ports, Pre-Built Gaming PC Tower (TG01-2070, 2021)",
+      "price": "1000"
+    },
+    {
+        "name": "Roomba i3 EVO",
+        "description": "Wi-Fi Connected Robot Vacuum – Now Clean by Room with Smart Mapping Works with Alexa Ideal for Pet Hair Carpets & Hard Floors, Roomba i3",
+        "price": "280"
+    },
+    {
+        "name": "2020 Chevy Tahoe LT SUV",
+        "description": "5.3L V8 engine, 27,000 miles, AWD",
+        "price": "49500"
+    }
+  ]

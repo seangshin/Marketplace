@@ -1,0 +1,15 @@
+{{#each bids as |bid| }}
+<div class="row mb-4 p-4">
+  <div class="col-md-5">
+    <h2>
+      <a href="/post/{{bid.id}}">{{bid.name}}</a>
+    </h2>
+    <p>Created by {{bid.user.name}} on {{format_date bid.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{bid.description}}
+    </p>
+  </div>
+</div>
+{{/each}}
