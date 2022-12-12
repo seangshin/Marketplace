@@ -19,7 +19,7 @@ h1 {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
+@charset "UTF-8";
 /*********** reset **********/
 html,
 body,
@@ -39,7 +39,7 @@ body {
 }
 
 /* -----------------------
-animation circle
+animation circle 回る玉 ~4s
 ----------------------- */
 .circle {
   position: absolute;
@@ -140,7 +140,7 @@ animation big 広がる玉 4s~5.6s
 }
 
 /* -----------------------
-animation 
+animation tri 突き上げる三角 ~5.9s
 ----------------------- */
 .tri {
   position: absolute;
@@ -159,7 +159,7 @@ animation
 }
 
 /* -----------------------
-animation
+animation squ 現れる四角 7.3s
 ----------------------- */
 .squ {
   position: absolute;
