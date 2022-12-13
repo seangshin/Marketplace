@@ -152,6 +152,12 @@ button:hover{
     padding: 2em 1em 0;
 }
 
+.dollar-amount {
+  color: #056605;
+  font-weight: bold;
+  margin-left: -5px;
+}
+
 .post {
     padding-bottom: 2em;
 }

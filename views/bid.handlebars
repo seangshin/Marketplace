@@ -4,12 +4,12 @@
 
 
   {{#if logged_in}}<!--check if user logged in-->
-  {{#if filteredComments.length}}<!--check if comments exist-->
+  {{#if comments.length}}<!--check if comments exist-->
 
   <h2>Bidders:</h2>
 
-  {{#each filteredComments as |comment|}}
-  <p>{{comment.user.name}} bidded ${{comment.price}} on {{format_date comment.date_created}}</p>
+  {{#each comments as |comment|}}
+  <p>{{comment.user.name}} bidded 💲 <span class="dollar-amount">{{comment.price}}</span> on {{format_date comment.date_created}}</p>
   {{/each}}
 
   {{else}}
