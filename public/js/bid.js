@@ -6,9 +6,6 @@ const bidFormHandler = async (event) => {
     const bidId = event.target.getAttribute('bid-id');
     const startingBid = document.querySelector('#startingBid').textContent;
     const startingBidNum = parseInt(startingBid);
-    alert(`Bid ID: ${bidId} and bid amount ${price}`);
-    console.log(startingBidNum);
-    console.log(typeof startingBidNum);
 
     //check if user's bid is higher than starting bid
     if (price<startingBidNum) {
@@ -56,9 +53,6 @@ const bidFormHandler = async (event) => {
                     alert(`Bid not added.`);
                 }
             }
-          
-      
-          
         }
     }
   
@@ -66,10 +60,8 @@ const bidFormHandler = async (event) => {
 };
   
   
-  if (document.querySelector('.submitBtn') != null) {
-    document
-    .querySelector('.submitBtn')
-    .addEventListener('click', bidFormHandler);
-  }
+if (document.querySelector('.submitBtn') != null) {
+    document.querySelector('.submitBtn').addEventListener('click', bidFormHandler);
+}
   
   

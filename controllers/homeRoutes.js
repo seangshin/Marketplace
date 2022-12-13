@@ -46,7 +46,7 @@ router.get('/bid/:id', async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', async (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/');
@@ -56,7 +56,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/register', (req, res) => {
+router.get('/register', async (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/');
@@ -66,9 +66,23 @@ router.get('/register', (req, res) => {
   res.render('register');
 });
 
-router.get('/profile', (req, res) => {
+router.get('/profile', async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Bid }, {model: Comment}],
+    });
 
-  res.render('profile');
+    const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
