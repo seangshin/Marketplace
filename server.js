@@ -2,10 +2,11 @@
 const express = require('express');
 const path = require('path');
 const routes = require('./controllers');
+const helpers = require('./utils/helpers');
 
 //Import express-handlebars
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const hbs = exphbs.create({ helpers });
 const session = require('express-session');
 
 //Set up for express app
@@ -15,6 +16,10 @@ const PORT = process.env.PORT || 3001;
 // Set up sessions
 const sess = {
   secret: 'Super secret secret',
+  cookie: {
+    // Stored in milliseconds
+    maxAge: 60 * 60 * 1000, // expires after 1 hour
+  },
   resave: false,
   saveUninitialized: true,
 };
