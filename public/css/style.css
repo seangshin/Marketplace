@@ -74,7 +74,45 @@ h1 {
     background-color: #ffffff;
     color: #dd1d5e;
 }
+ /* Registersign up form */
+.signup-form{
+  text-align: left;
+  font-size: 20px;
+  padding: 0;
+  display:block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  cursor: pointer;
+  border-color: black;
+  }
+/* Register/Login sign up form hover */
+  .signup-form:hover{
+    background-color: #ffffff;
+    color: #dd1d5e;
+  }
+  /*Login form */
+  .login-form{
+    text-align: left;
+    font-size: 20px;
+    padding: 0;
+    display:block;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    cursor: pointer;
+    border-color: black;
 
+  }
+/*Login form hover*/
+  .login-form:hover{
+    background-color: #ffffff;
+    color: #dd1d5e;
+  }
+  .box{
+    display:block;
+
+  }
 .brand-title,
 .brand-tagline {
     margin: 0;
@@ -122,32 +160,44 @@ h1 {
     letter-spacing: 0.1em;
 }
 /* Search Box Content */
-input{
+.sb-example{
+  width: 100%;
+  position: relative;
+  display: flex;
+  }
+
+  .search-options{
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color:black;
+  }
+
+  .sb-example.search-options:focus{
+    color: #00B4CC;
+  }
+
+  .btn-primary{
+    width: 40px;
+    height: 50px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
     text-align: center;
-    font-size: 35px ;
-    border-color: white;
-    }
-    /*Buttons*/
-button{
-    font-size: 30px;
-    color: #FFF;
-    background-color: #333;
-    text-shadow: white 0 -1px 4px, white 0 -2px 10px, white 0 -10px 20px, black0 -18px 40px;
-    font-family: Impact, Charcoal, sans-serif;
-    letter-spacing: 0px;
-    word-spacing: 10px;
-    font-weight: 400;
-    text-decoration: none solid rgb(68, 68, 68);
-    font-style: italic;
-    font-variant: normal;
-    text-transform: capitalize;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
+    font-size: 20px;
+  }
+
+
+input:hover{
+  background-color: #ffffff;
+  cursor: pointer;
 }
-/*Button hover*/
-button:hover{
-    color: red;
-    background: white;
-}
+
 .content {
     padding: 2em 1em 0;
 }
