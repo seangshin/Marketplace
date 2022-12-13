@@ -26,9 +26,7 @@ router.get('/bid/:id', async (req, res) => {
       include: [{ model: User }, { model: Comment, include: [{ model: User }] } ],
     });
 
-    
     const bid = bidData.get({ plain: true });
-    //console.log(bid.comments[0].user);
 
     //check if post belongs to user
     let match = false;
