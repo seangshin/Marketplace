@@ -8,16 +8,41 @@
 
       <nav class="nav">
         <ul class="nav-list">
+
           <li class="nav-item">
-            <a class="eMarket-button" href="">eMarket</a>
             <div class="topnav">
-              <a class="active" href="#home">Home</a>
-              <a href="#bids">Bids</a>
-              <a href="#login">Login</a>
-              <a href="#register">Register</a>
-              <a href="#profile">Profile</a>
+              <a class="active" href="/">Bids</a>
             </div>
           </li>
+
+          {{#if logged_in}}
+          <li class="nav-item">
+            <div class="topnav">
+              <a href="/profile">Profile</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <div class="topnav">
+              <a id="logout" href="">Logout</a>
+            </div>
+          </li>
+          
+          {{else}}
+          <li class="nav-item">
+            <div class="topnav">
+              <a href="/login">Login</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <div class="topnav">
+              <a href="/register">Register</a>
+            </div>
+          </li>
+          {{/if}}
+          
+
         </ul>
       </nav>
     </div>
@@ -27,3 +52,7 @@
       <button class="btn btn-primary search" type="button" id="button-Search"><i class="fa-solid fa-magnifying-glass"></i>
     </div>
   </div>
+
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}

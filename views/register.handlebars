@@ -1,9 +1,8 @@
-{{> header }}
 <!--Register page-->
 <h1>Register</h1>
-<form action="/register" method="POST">
+<form class="signup-form" action="/register" method="POST">
 <div>
-    <label for="name">Name</label>
+    <label for="name">Username</label>
     <input type="text" id="name" name="name"
     required>
 </div>
@@ -20,4 +19,5 @@
 <!-- Button to submit form-->
 <button type="submit">Register</button>
 </form>
-<a href="/login">Login</a>
+
+<script src="/js/login.js"></script>
