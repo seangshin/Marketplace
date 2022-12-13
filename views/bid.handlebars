@@ -1,0 +1,26 @@
+<h1>{{name}}</h1>
+  <p>{{description}}</p>
+  <p>Posted by {{user.name}} on {{format_date date_created}}</p>
+
+
+  {{#if logged_in}}<!--check if user logged in-->
+  {{#if filteredComments.length}}<!--check if comments exist-->
+
+  <h2>Bidders:</h2>
+
+  {{#each filteredComments as |comment|}}
+  <p>{{comment.user.name}} bidded ${{comment.price}} on {{format_date comment.date_created}}</p>
+  {{/each}}
+
+  {{else}}
+  <p>No current bidders.</p>
+  {{/if}}
+
+
+<form class="pure-form bidForm">
+    <h2>Your Bid</h2>
+    <input type="text" class="pure-input-2-4" placeholder="Enter your bid here" />
+</form>
+
+{{/if}}
+<script src="/js/bid.js"></script>

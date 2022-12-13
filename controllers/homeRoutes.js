@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Bid } = require('../models');
+const { User, Bid, Comment } = require('../models');
 //const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -28,14 +28,29 @@ router.get('/bid/:id', async (req, res) => {
 
     const bid = bidData.get({ plain: true });
 
+
     //check if post belongs to user
     let match = false;
     if (req.session.user_id == bid.user_id) {
       match = true;
     }
 
+    console.log(bid);
+    // const commentData = await Comment.findAll({
+    //   include: [{ model: User }, { model: Bid }],
+    // });
+    // //Serialize data so the template can read it
+    // const comments = commentData.map((comment) => comment.get({ plain: true }));
+    //console.log(comments);
+    //
+    // const filteredComments = comments.filter(comment => {
+    //   return comment.bid_id == req.params.id;
+    // });
+    // console.log(filteredComments);
+
     res.render('bid', { 
       ...bid,
+      ...filteredComments,
       logged_in: req.session.logged_in,
       match
     });
