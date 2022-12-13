@@ -23,11 +23,12 @@ router.get('/', async (req, res) => {
 router.get('/bid/:id', async (req, res) => {
   try {
     const bidData = await Bid.findByPk(req.params.id, {
-      include: [{ model: User }, { model: Comment }],
+      include: [{ model: User }, { model: Comment, include: [{ model: User }] } ],
     });
 
+    
     const bid = bidData.get({ plain: true });
-
+    //console.log(bid.comments[0].user);
 
     //check if post belongs to user
     let match = false;
@@ -35,22 +36,8 @@ router.get('/bid/:id', async (req, res) => {
       match = true;
     }
 
-    console.log(bid);
-    // const commentData = await Comment.findAll({
-    //   include: [{ model: User }, { model: Bid }],
-    // });
-    // //Serialize data so the template can read it
-    // const comments = commentData.map((comment) => comment.get({ plain: true }));
-    //console.log(comments);
-    //
-    // const filteredComments = comments.filter(comment => {
-    //   return comment.bid_id == req.params.id;
-    // });
-    // console.log(filteredComments);
-
     res.render('bid', { 
       ...bid,
-      ...filteredComments,
       logged_in: req.session.logged_in,
       match
     });
