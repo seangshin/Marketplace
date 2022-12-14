@@ -28,6 +28,16 @@ router.get('/bid/:id', async (req, res) => {
 
     const bid = bidData.get({ plain: true });
 
+    //check if the bid is expired
+    const now = Date().toLocaleString();
+    const date = bid.expiration_date.toLocaleString();
+    //
+    if (now < date) {
+      console.log('expired');
+    } else {
+      console.log('not expired');
+    }
+
     //check if post belongs to user
     let match = false;
     if (req.session.user_id == bid.user_id) {
