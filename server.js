@@ -30,7 +30,10 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 //import sequelize connection
-const sequelize = require('./config/connection');
+const { sequelize, transporter } = require('./config/connection');
+//const sequelize = require('./config/connection');
+
+
 
 // middleware
 app.use(express.json());

@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const nodemailer = require('nodemailer');
 //Enable acces to .env variables
 require('dotenv').config();
 
@@ -13,4 +14,13 @@ const sequelize = process.env.JAWSDB_URL
     },
   });
 
-module.exports = sequelize;
+// create reusable transporter object using the default SMTP transport
+const transporter = nodemailer.createTransport({
+  service: 'hotmail',
+  auth: {
+    user: process.env.EMAIL, 
+    pass: process.env.PASS,
+  },
+});
+
+module.exports = { sequelize, transporter };
