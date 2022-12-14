@@ -27,6 +27,10 @@ Bid.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    expiration_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

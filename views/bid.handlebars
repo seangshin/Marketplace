@@ -1,6 +1,7 @@
 <h1>{{name}}</h1>
   <p>{{description}}</p>
   <p>Posted by {{user.name}} on {{format_date date_created}}</p>
+  <p>Expires on {{format_date expiration_date}}</p>
   <h2>Starting Bid: 💲 <span class="dollar-amount" id="startingBid">{{price}}</span></h2>
 
 
@@ -24,6 +25,10 @@
     <input type="text" class="pure-input-2-4" placeholder="Enter your bid here" id="userBid"/>
     <button class="submitBtn"  bid-id="{{id}}">Submit Bid</button>
 </form>
+{{/if}}
+{{#if active}}
+{{else}}
+<h2>Bid expired, please contact the highest bidder to complete the transaction process.</h2>
 {{/if}}
 
 {{else}}
