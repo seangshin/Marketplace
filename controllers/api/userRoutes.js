@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const { transporter } = require('../../config/connection');
 
 // Create new user
 router.post('/', async (req, res) => {
@@ -14,6 +15,23 @@ router.post('/', async (req, res) => {
 
       res.status(200).json(userData);
     });
+
+    //send auto email to new registers with welcome message
+    var mailOptions = {
+      from: process.env.EMAIL,
+      to: req.body.email,
+      subject: 'Welcome to EMARKET',
+      text: `${req.body.name}, thank you for registering with EMARKET.`
+    };
+    
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+
   } catch (err) {
     res.status(400).json(err);
   }
