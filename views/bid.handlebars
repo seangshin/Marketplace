@@ -26,6 +26,10 @@
     <button class="submitBtn"  bid-id="{{id}}">Submit Bid</button>
 </form>
 {{/if}}
+{{#if active}}
+{{else}}
+<h2>Bid expired, please contact the highest bidder to complete the transaction process.</h2>
+{{/if}}
 
 {{else}}
 <h2>Login or Register to start bidding.</h2>

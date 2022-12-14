@@ -19,7 +19,8 @@
 	<div class="posts">
 	<h2 class="content-subhead">By Most Recent</h2>
 
-	{{#each bids as |bid| }}
+	{{#each bidsActive as |bid| }}
+	{{#if bid.active}}
 	<section class="post">
 			<header class="post-header">
 				<h2 class="post-title">
@@ -35,6 +36,7 @@
 				</p>
 			</div>
 	</section>
+	{{/if}}
 	{{/each}}
 	</div>
 

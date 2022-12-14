@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Bid, Comment } = require('../models');
+const moment = require('moment');
 //const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -11,8 +12,21 @@ router.get('/', async (req, res) => {
     //Serialize data so the template can read it
     const bids = bidData.map((bid) => bid.get({ plain: true }));
 
+    //check if the bid is expired
+    const now = moment().format('MM/DD/YYYY, HH:MM:SS');
+    const bidsActive = bids.map((bid) => {
+      const copy = { ...bid };
+      var options = { hour12: false };
+      if (bid.expiration_date.toLocaleString('en-US', options) < now) {
+        copy.active = false;
+      } else {
+        copy.active = true;
+      }
+      return copy;
+    });
+
     res.render('homepage', {
-      bids,
+      bidsActive,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -29,13 +43,12 @@ router.get('/bid/:id', async (req, res) => {
     const bid = bidData.get({ plain: true });
 
     //check if the bid is expired
-    const now = Date().toLocaleString();
-    const date = bid.expiration_date.toLocaleString();
-    //
-    if (now < date) {
-      console.log('expired');
+    const now = moment().format('MM/DD/YYYY, HH:MM:SS');
+    var options = { hour12: false };
+    if (bid.expiration_date.toLocaleString('en-US', options) < now) {
+      bid.active = false;
     } else {
-      console.log('not expired');
+      bid.active = true;
     }
 
     //check if post belongs to user
