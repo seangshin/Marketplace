@@ -1,11 +1,17 @@
 [
     {
-      "price": "100"
+      "price": "1050",
+      "user_id": 2,
+      "bid_id": 1
     },
     {
-        "price": "1000"
+        "price": "300",
+        "user_id": 1,
+        "bid_id": 2
     },
     {
-        "price": "500"
+        "price": "400",
+        "user_id": 2,
+        "bid_id": 2
     }
   ]
