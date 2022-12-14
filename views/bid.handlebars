@@ -17,12 +17,15 @@
   <p>No current bidders.</p>
   {{/if}}
 
-
+{{#if match}}
+{{else}}
 <form class="pure-form bidForm">
-    <h2>Your Bid</h2>
+    <h2>Place Bid</h2>
     <input type="text" class="pure-input-2-4" placeholder="Enter your bid here" id="userBid"/>
     <button class="submitBtn"  bid-id="{{id}}">Submit Bid</button>
 </form>
+{{/if}}
+
 {{else}}
 <h2>Login or Register to start bidding.</h2>
 {{/if}}
