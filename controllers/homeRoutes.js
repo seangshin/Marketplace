@@ -13,25 +13,20 @@ router.get('/', async (req, res) => {
     const bids = bidData.map((bid) => bid.get({ plain: true }));
     
     //check if the bid is expired
-    // const now = moment().format('MM/DD/YYYY, HH:MM:SS');
-    // const bidsActive = bids.map((bid) => {
-    //   const copy = { ...bid };
-    //   var options = { hour12: false };
-    //   if (bid.expiration_date.toLocaleString('en-US', options) < now) {
-    //     copy.active = false;
-    //   } else {
-    //     copy.active = true;
-    //   }
-    //   return copy;
-    // });
-
-    // res.render('homepage', {
-    //   bidsActive,
-    //   logged_in: req.session.logged_in
-    // });
+    const now = moment().format('MM/DD/YYYY, HH:MM:SS');
+    const bidsActive = bids.map((bid) => {
+      const copy = { ...bid };
+      var options = { hour12: false };
+      if (bid.expiration_date.toLocaleString('en-US', options) < now) {
+        copy.active = false;
+      } else {
+        copy.active = true;
+      }
+      return copy;
+    });
 
     res.render('homepage', {
-      bids,
+      bidsActive,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -48,13 +43,13 @@ router.get('/bid/:id', async (req, res) => {
     const bid = bidData.get({ plain: true });
 
     //check if the bid is expired
-    // const now = moment().format('MM/DD/YYYY, HH:MM:SS');
-    // var options = { hour12: false };
-    // if (bid.expiration_date.toLocaleString('en-US', options) < now) {
-    //   bid.active = false;
-    // } else {
-    //   bid.active = true;
-    // }
+    const now = moment().format('MM/DD/YYYY, HH:MM:SS');
+    var options = { hour12: false };
+    if (bid.expiration_date.toLocaleString('en-US', options) < now) {
+      bid.active = false;
+    } else {
+      bid.active = true;
+    }
 
     //check if post belongs to user
     let match = false;
