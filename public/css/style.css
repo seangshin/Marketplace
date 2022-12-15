@@ -17,8 +17,22 @@ h1 {
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
 }
+body{
+    background: #23242a;
+}
+
+h2{
+    color:#00B4CC;
+    font-weight: 500px;
+    letter-spacing: 0.1em;
+}
+
+
+
 
 /* LAYOUT CSS Pure */
 .pure-img-responsive {
@@ -70,49 +84,148 @@ h1 {
     background: rgb(61, 93, 75);
     color: #fff;
 }
-.sidebar a:hover:not(.active) {
-    background-color: #ffffff;
-    color: #dd1d5e;
-}
- /* Registersign up form */
+/*-----------------------------------------Register page----------------------------*/
+ /* Register sign up form */
 .signup-form{
-  text-align: left;
-  font-size: 20px;
-  padding: 0;
-  display:block;
-  width: 100px;
-  height: 100px;
-  padding: 5px;
-  cursor: pointer;
-  border-color: black;
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background: #28292d;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
   }
-/* Register/Login sign up form hover */
-  .signup-form:hover{
-    background-color: #ffffff;
-    color: #dd1d5e;
+   /*Register Username, Email and Password*/
+  .signup-form label{
+    font-size: 1em;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    color: #00B4CC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  /*Login form */
+
+/*Register Title*/
+    .signup-form h2{
+        color:#00B4CC;
+        font-weight: 500px;
+        letter-spacing: 0.1em;
+        font-size: 50px;
+        letter-spacing: px;
+        word-spacing: 5px;
+    }
+/*Register Box*/
+    .box2{
+        position:relative;
+        width: 75%;
+        height: 420px;
+        background: #1c1c1c;
+        background: linear-gradient(0deg,transparent,#45f3ff,
+        rgb(61, 93, 75));
+        padding: 20px 10px 10px;
+        font-size: 1em;
+        letter-spacing: 0.05em;
+        margin-top: 200px;
+
+    }
+    /*Fill out form for Username, Email and Password (Register)*/
+    .signup-form input{
+        font-size: 20px;
+        padding: 20px 10px 10px;
+        position: relative;
+        background: transparent;
+        width: 100%;
+        border: 3px solid #00B4CC;
+        padding: 5px;
+
+    }
+    /*Register button*/
+    .signup-form button{
+        background: #00B4CC;
+        color: #fff;
+        font-size: 20px;
+        width: 100px;
+        margin-top: 10px;
+        cursor: pointer;
+
+    }
+/*-----------------------------------------Register page End----------------------------*/
+/*-----------------------------------------Login page----------------------------*/
+      /*Login form */
   .login-form{
-    text-align: left;
-    font-size: 20px;
-    padding: 0;
-    display:block;
-    width: 100px;
-    height: 100px;
-    padding: 5px;
-    cursor: pointer;
-    border-color: black;
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background: #28292d;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    }
+
+  /*Login Email and Password*/
+  .login-form label{
+    font-size: 1em;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    color: #00B4CC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 
   }
-/*Login form hover*/
-  .login-form:hover{
-    background-color: #ffffff;
-    color: #dd1d5e;
+/*Login Title*/
+  .login-form h2{
+    color:#00B4CC;
+    font-weight: 500px;
+    letter-spacing: 0.1em;
+    font-size: 50px;
+    letter-spacing: px;
+    word-spacing: 5px;
   }
+        
+    /*Login Box*/
   .box{
-    display:block;
-
-  }
+    position:relative;
+    width: 75%;
+    height: 420px;
+    background: #1c1c1c;
+    background: linear-gradient(0deg,transparent,#45f3ff,
+    rgb(61, 93, 75));
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    margin-top: 200px;
+   
+}
+/*Fill out form for email and password (Login)*/
+.login-form input{
+    font-size: 20px;
+    padding: 20px 10px 10px;
+    position: relative;
+    background: transparent;
+    width: 100%;
+    border: 3px solid #00B4CC;
+    padding: 5px;
+   
+}
+/*Login Button*/
+.login-form button{
+    background: #00B4CC;
+    color: #fff;
+    font-size: 20px;
+    width: 60px;
+    margin-top: 10px;
+   
+}
+/*-----------------------------------------Login page End----------------------------*/
 .brand-title,
 .brand-tagline {
     margin: 0;
@@ -137,7 +250,7 @@ h1 {
 }
 .nav-item a {
     background: transparent;
-    border: 2px solid rgb(176, 202, 219);
+    border: 3px solid #00B4CC;
     color: #fff;
     margin-top: 1em;
     letter-spacing: 0.05em;
@@ -179,24 +292,16 @@ h1 {
   .sb-example.search-options:focus{
     color: #00B4CC;
   }
-
+  /*Search Button in nav*/
   .btn-primary{
-    width: 40px;
+    width: 50px;
     height: 50px;
-    border: 1px solid #00B4CC;
     background: #00B4CC;
     text-align: center;
     color: #fff;
-    border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 20px;
-  }
-
-
-input:hover{
-  background-color: #ffffff;
-  cursor: pointer;
-}
+    }
 
 .content {
     padding: 2em 1em 0;
@@ -273,7 +378,7 @@ input:hover{
 .footer .pure-menu a:focus {
     background: none;
 }
-
+/*Media Quires*/
 @media (min-width: 48em) {
     .content {
         padding: 2em 3em 0;
