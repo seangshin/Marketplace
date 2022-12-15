@@ -11,25 +11,24 @@ router.get('/', async (req, res) => {
     });
     //Serialize data so the template can read it
     const bids = bidData.map((bid) => bid.get({ plain: true }));
-    if(bids) {
-      //check if the bid is expired
-    const now = moment().format('MM/DD/YYYY, HH:MM:SS');
-    const bidsActive = bids.map((bid) => {
-      const copy = { ...bid };
-      var options = { hour12: false };
-      if (bid.expiration_date.toLocaleString('en-US', options) < now) {
-        copy.active = false;
-      } else {
-        copy.active = true;
-      }
-      return copy;
-    });
+    
+    //check if the bid is expired
+    // const now = moment().format('MM/DD/YYYY, HH:MM:SS');
+    // const bidsActive = bids.map((bid) => {
+    //   const copy = { ...bid };
+    //   var options = { hour12: false };
+    //   if (bid.expiration_date.toLocaleString('en-US', options) < now) {
+    //     copy.active = false;
+    //   } else {
+    //     copy.active = true;
+    //   }
+    //   return copy;
+    // });
 
-    res.render('homepage', {
-      bidsActive,
-      logged_in: req.session.logged_in
-    });
-    }
+    // res.render('homepage', {
+    //   bidsActive,
+    //   logged_in: req.session.logged_in
+    // });
 
     res.render('homepage', {
       bids,
