@@ -14,13 +14,13 @@ const sequelize = process.env.JAWSDB_URL
     },
   });
 
+  const credentials = process.env.JAWSDB_EMAIL
+    ? { user: process.env.JAWSDB_EMAIL, pass: process.env.JAWSDB_PASS }
+    : { user: process.env.EMAIL, pass: process.env.PASS }
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
   service: 'hotmail',
-  auth: {
-    user: process.env.EMAIL, 
-    pass: process.env.PASS,
-  },
+  auth: credentials,
 });
 
 module.exports = { sequelize, transporter };
