@@ -11,8 +11,8 @@ router.get('/', async (req, res) => {
     });
     //Serialize data so the template can read it
     const bids = bidData.map((bid) => bid.get({ plain: true }));
-
-    //check if the bid is expired
+    if(bids) {
+      //check if the bid is expired
     const now = moment().format('MM/DD/YYYY, HH:MM:SS');
     const bidsActive = bids.map((bid) => {
       const copy = { ...bid };
@@ -27,6 +27,12 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', {
       bidsActive,
+      logged_in: req.session.logged_in
+    });
+    }
+
+    res.render('homepage', {
+      bids,
       logged_in: req.session.logged_in
     });
   } catch (err) {
