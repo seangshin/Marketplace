@@ -58,16 +58,7 @@ const bidFormHandler = async (event) => {
   
     
 };
-let slider = tns({
-    container: ".my-slider",
-    "slideBy": 1,
-    "speed" :400,
-    "nav" :flase,
-    controlsContainer: "#controls",
-    prevButton: ".previous",
-    nextButton: ".next"
-  });
-  
+
 if (document.querySelector('.submitBtn') != null) {
     document.querySelector('.submitBtn').addEventListener('click', bidFormHandler);
 }
