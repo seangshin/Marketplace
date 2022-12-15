@@ -396,6 +396,13 @@ transform:scale(1);
   margin-left: -5px;
 }
 /*Bids*/
+.bidForm input {
+    color: black;
+}
+
+.bidForm button {
+    color: black;
+}
 .post {
     padding-bottom: 2em;
 }
@@ -495,4 +502,13 @@ transform:scale(1);
     .container{
         width:100%;
     }
+}
+
+/*-----------------------------------------Profile page----------------------------*/
+.create-form input{
+    color: #28292d;
+}
+
+.create-form button{
+    color: #28292d;
 }
