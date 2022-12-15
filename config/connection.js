@@ -3,6 +3,7 @@ const nodemailer = require('nodemailer');
 //Enable acces to .env variables
 require('dotenv').config();
 
+
 //Create a connection object to interact with the database
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
