@@ -45,7 +45,9 @@ MIT
 seangshin, victor5055, JaredW1911
 
 ## Tests
-Not applicable
+For development, the application requires the heroku CLI to seed the database when the application is first deployed. Run the following commands in the terminal:
+>heroku run bash
+~ $ npm run seed
   
 ## Questions
 GitHub URL: https://github.com/seangshin, https://github.com/victor5055, https://github.com/JaredW1911
