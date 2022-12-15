@@ -18,8 +18,8 @@ const sequelize = process.env.JAWSDB_URL
 const transporter = nodemailer.createTransport({
   service: 'hotmail',
   auth: {
-    user: process.env.JAWSDB_URL, 
-    pass: process.env.JAWSDB_URL,
+    user: 'emarketbootcamp@hotmail.com', 
+    pass: 'password12345',
   },
 });
 
