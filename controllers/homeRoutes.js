@@ -48,13 +48,13 @@ router.get('/bid/:id', async (req, res) => {
     const bid = bidData.get({ plain: true });
 
     //check if the bid is expired
-    const now = moment().format('MM/DD/YYYY, HH:MM:SS');
-    var options = { hour12: false };
-    if (bid.expiration_date.toLocaleString('en-US', options) < now) {
-      bid.active = false;
-    } else {
-      bid.active = true;
-    }
+    // const now = moment().format('MM/DD/YYYY, HH:MM:SS');
+    // var options = { hour12: false };
+    // if (bid.expiration_date.toLocaleString('en-US', options) < now) {
+    //   bid.active = false;
+    // } else {
+    //   bid.active = true;
+    // }
 
     //check if post belongs to user
     let match = false;
