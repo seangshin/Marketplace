@@ -6,7 +6,7 @@ const helpers = require('./utils/helpers');
 
 
 
-app.use(express.static('views/images')); 
+
 
 //Import express-handlebars
 const exphbs = require('express-handlebars');
