@@ -6,7 +6,9 @@
 Link to deployed application: https://safe-harbor-99168.herokuapp.com/
 
 ## Description
-The motivation of this project is to build a Content Management System (CMS) e-commerce site, where users can post items for sale and other users can place bids on the item. The user can specify when the post expires to secure the highest bidder and proceed with item transactions. The application follows the Model View Controller (MVC) architecture and uses Node.js & Express.js to create a RESTful API. It uses Handlebars.js as the template engine, MySQL as the relational database management system, and Sequelize as the Object Relational Mapper (ORM). It also uses the express-session npm package for authentication and the nodemailer npm package for website notifications via email. The application supports user registration and authentication features by storing user session data as a cookie and implementing packages such as brypt and dotenv to protect API keys and sensitive information with environment variables.
+The motivation of this project is to build a Content Management System (CMS) e-commerce site, where users can post items for sale and other users can place bids on the item. The user can specify when the post expires to secure the highest bidder and proceed with item transactions. 
+
+The application follows the Model View Controller (MVC) architecture and uses Node.js & Express.js to create a RESTful API. It uses Handlebars.js as the template engine, MySQL as the relational database management system, and Sequelize as the Object Relational Mapper (ORM). It also uses the express-session npm package for authentication and the nodemailer npm package for website notifications via email. The application supports user registration and authentication features by storing user session data as a cookie and implementing packages such as brypt and dotenv to protect API keys and sensitive information with environment variables.
 
 ## Table of Contents
 - [Installation](#installation)
